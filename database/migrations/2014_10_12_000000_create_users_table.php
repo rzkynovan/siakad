@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->string('role')->default('user');
+            // $table->string('alamat')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('no_hp')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -26,6 +29,7 @@ return new class extends Migration
             $table->softDeletes();
         });
     }
+    
 
     /**
      * Reverse the migrations.
