@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('units', function (Blueprint $table) {
-            $table->id();
-            // $table->foreignId('pegawai_id')->constrained();
-            $table->string('nama_unit');
-            $table->timestamps();
+        Schema::table('seminars', function (Blueprint $table) {
+            $table->foreignId('siswa_id')->constrained();
+            $table->foreignId('pegawai_id')->constrained();
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('units');
+        Schema::table('seminars', function (Blueprint $table) {
+            //
+        });
     }
 };
