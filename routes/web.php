@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('siswa.index');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+// Route::get('', 'UserController@index')->name('user');
+
+Route::middleware(['auth', 'cekrole:siswa'])->group(function () {
+    return redirect()->away('http://youtube.com');
 });

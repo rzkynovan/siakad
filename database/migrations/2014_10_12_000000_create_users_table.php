@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('avatar')->nullable();
-            $table->string('role')->default('user');
+            $table->string('role')->default('siswa');
             // $table->string('alamat')->nullable();
             $table->string('gender')->nullable();
             $table->string('no_hp')->nullable();
